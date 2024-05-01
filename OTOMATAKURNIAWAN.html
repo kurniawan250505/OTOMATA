@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Number Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #000; /* Set background color to black */
+            color: #fff; /* Set text color to white for contrast */
+        }
+        .container {
+            margin: 50px auto;
+            width: 300px;
+            text-align: left;
+            padding: 20px; 
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            background-color: #222; /* Darker shade for the container for better visibility */
+        }
+        .result-box {
+            background-color: #333; /* Even darker shade for results box */
+            border: 1px solid #444;
+            margin-top: 10px;
+            padding: 10px;
+            text-align: center;
+            color: #fff; /* Ensure text is white for readability */
+        }
+        h1, h2 {
+            color: #fff; /* White text for headings */
+        }
+        input[type="text"], button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            background-color: #555;
+            border: none;
+            color: #fff;
+        }
+        button {
+            background-color: hsl(235, 100%, 55%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+            
+        }
+        #footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: #333;
+            padding: 10px 0;
+            color: #fff; /* Set footer text color to white */
+        }
+    </style>
+</head>
+<body>
+    <h1>Assignment Automata</h1>
+    <div class="container">
+        <h2>Scientific Number Checker</h2>
+        <input type="text" id="numberInput" placeholder="Enter a scientific number or text">
+        <button onclick="checkScientificNumber()">Check</button>
+        <div id="result" class="result-box"></div>
+    </div>
+
+    <div id="footer">
+        <p>Created by: <br> KURNIAWAN SOLEMAN <br> (221011060118) <br> SISTEM INFORMASI <br> UNIVERSITAS SAM RATULANGI MANADO</p>
+    </div>
+
+    <script>
+    function checkScientificNumber() {
+        var input = document.getElementById("numberInput").value;
+        var scientificRegex = /^[+-]?\d+(\.\d+)?[eE][+-]?\d+$/;
+        var resultText = input + (scientificRegex.test(input) ? " is a valid ." : " is not a valid .");
+        document.getElementById("result").innerText = resultText;
+    }
+    </script>
+</body>
+</html>
